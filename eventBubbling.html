@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <section>
+        <div>
+            <input type="button" value="Click Me" />
+        </div>
+    </section>
+</body>
+<!-- Event Bubbleing : in this when we click the child element it will goes the top of the
+parent element till html. Event bubbling call child to parent-->
+
+<!-- Event Capturing is just apposite of event bubbling.Event Capturing call parent to child.
+to enable event capturing we have to pass the extra parameter true-->
+
+<script>
+    const div = document.querySelector("div")
+    const button = document.querySelector("input")
+
+    //event bubbling
+    div.addEventListener("click", () => {
+        console.log("Div Called")
+    })
+
+    button.addEventListener("click", () => {
+        console.log("Button Called")
+    })
+
+    //event capturing
+    div.addEventListener("click", () => {
+        console.log("Div Called")
+    }, true)
+
+    button.addEventListener("click", () => {
+        console.log("Button Called")
+    }, true)
+
+    // how to stop event bubbling in javascript for that we have to call event.stopPropagation() method
+
+    // example for stop event bubbleing
+
+    button.addEventListener("click", (event) => {
+        event.stopPropagation()
+        console.log("Button Called")
+    })
+
+
+
+</script>
+
+</html>
