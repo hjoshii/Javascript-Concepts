@@ -15,8 +15,6 @@ getName("kamal","Mohan", "Suresh")
 
 // you can see we are passing multiple parameter to function but we are accessing 
 // those parameters using rest operator into a single value using ...(3 dot signs).
-//if you have lots of parameter and you want declare at the time declaring a function
-// then you can just use rest parameter.
 
 //earlier this concept we can also achive with javascript keyword "arguments".
 
